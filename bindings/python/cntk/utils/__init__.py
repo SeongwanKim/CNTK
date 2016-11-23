@@ -72,7 +72,7 @@ def tensors_to_text_format(sample_idx, alias_tensor_map):
           are assumed to have dynamic axis.
 
     Returns:
-        String representation in CNTKTextReader format
+        String representation in `CNTKTextReader format <https://github.com/microsoft/cntk/wiki/CNTKTextFormat-Reader>`_
     '''
 
     max_seq_length = max(len(t) for t in alias_tensor_map.values())
@@ -460,7 +460,10 @@ def sanitize_batch(var, batch, seq_starts=None, dtype=None, device=None):
     Args:
         var (:class:`~cntk.ops.variables.Variable`): variable node for which
          the ``batch`` is meant 
-        batch (list of NumPy arrays): input
+        batch: batch input for `var`. It can be a pure Python structure (list
+         of lists, ...), a combination of lists of NumPy arrays or SciPy
+         sparse CSR matrices. Alternatively, it can also be the output of
+         :func:`one_hot`.
         seq_starts (list of bool or None): if None, every sequence is
          treated as a new sequence. Otherwise, it is interpreted as a list of
          Booleans that tell whether a sequence is a new sequence (`True`) or a
