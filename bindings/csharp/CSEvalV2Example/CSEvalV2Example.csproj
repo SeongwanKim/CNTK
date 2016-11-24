@@ -142,21 +142,6 @@
     <Compile Include="..\SwigBinding\SWIGTYPE_p_std__initializer_listT_size_t_t.cs">
       <Link>GeneratedFiles\SWIGTYPE_p_std__initializer_listT_size_t_t.cs</Link>
     </Compile>
-    <Compile Include="..\SwigBinding\SWIGTYPE_p_std__unordered_mapT_CNTK__Variable_CNTK__ValuePtr_std__hashT_CNTK__Variable_t_t__key_type.cs">
-      <Link>GeneratedFiles\SWIGTYPE_p_std__unordered_mapT_CNTK__Variable_CNTK__ValuePtr_std__hashT_CNTK__Variable_t_t__key_type.cs</Link>
-    </Compile>
-    <Compile Include="..\SwigBinding\SWIGTYPE_p_std__unordered_mapT_CNTK__Variable_CNTK__ValuePtr_std__hashT_CNTK__Variable_t_t__mapped_type.cs">
-      <Link>GeneratedFiles\SWIGTYPE_p_std__unordered_mapT_CNTK__Variable_CNTK__ValuePtr_std__hashT_CNTK__Variable_t_t__mapped_type.cs</Link>
-    </Compile>
-    <Compile Include="..\SwigBinding\SWIGTYPE_p_std__unordered_mapT_CNTK__Variable_CNTK__ValuePtr_std__hashT_CNTK__Variable_t_t__size_type.cs">
-      <Link>GeneratedFiles\SWIGTYPE_p_std__unordered_mapT_CNTK__Variable_CNTK__ValuePtr_std__hashT_CNTK__Variable_t_t__size_type.cs</Link>
-    </Compile>
-    <Compile Include="..\SwigBinding\SWIGTYPE_p_std__unordered_mapT_CNTK__Variable_CNTK__Variable_std__hashT_CNTK__Variable_t_t.cs">
-      <Link>GeneratedFiles\SWIGTYPE_p_std__unordered_mapT_CNTK__Variable_CNTK__Variable_std__hashT_CNTK__Variable_t_t.cs</Link>
-    </Compile>
-    <Compile Include="..\SwigBinding\SWIGTYPE_p_std__unordered_mapT_CNTK__Variable_std__shared_ptrT_CNTK__Value_t_std__hashT_CNTK__Variable_t_t.cs">
-      <Link>GeneratedFiles\SWIGTYPE_p_std__unordered_mapT_CNTK__Variable_std__shared_ptrT_CNTK__Value_t_std__hashT_CNTK__Variable_t_t.cs</Link>
-    </Compile>
     <Compile Include="..\SwigBinding\SWIGTYPE_p_std__unordered_setT_CNTK__Variable_t.cs">
       <Link>GeneratedFiles\SWIGTYPE_p_std__unordered_setT_CNTK__Variable_t.cs</Link>
     </Compile>
@@ -168,6 +153,9 @@
     </Compile>
     <Compile Include="..\SwigBinding\UnorderedMapVariableValuePtr.cs">
       <Link>GeneratedFiles\UnorderedMapVariableValuePtr.cs</Link>
+    </Compile>
+    <Compile Include="..\SwigBinding\UnorderedMapVariableVariable.cs">
+      <Link>GeneratedFiles\UnorderedMapVariableVariable.cs</Link>
     </Compile>
     <Compile Include="..\SwigBinding\Value.cs">
       <Link>GeneratedFiles\Value.cs</Link>
