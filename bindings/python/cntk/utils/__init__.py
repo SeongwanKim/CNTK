@@ -152,6 +152,15 @@ def one_hot(batch, num_classes, dtype=None, device=None):
     such that the integer data in ``batch`` is interpreted as the indices
     representing one-hot vectors.
 
+    Example:
+        >>> num_classes = 6
+        >>> sparse_indices = [[1,5],[4]]
+        >>> value = C.one_hot(sparse_indices, num_classes)
+        >>> i0 = C.input_variable(shape=num_classes, is_sparse=True)
+        >>> C.times(i0, np.eye(num_classes)).eval({i0: value})
+        [array([[ 0.,  1.,  0.,  0.,  0.,  0.],
+               [ 0.,  0.,  0.,  0.,  0.,  1.]], dtype=float32), array([[ 0.,  0.,  0.,  0.,  1.,  0.]], dtype=float32)]
+
     Args:
         batch (list (of lists, if sequence) of index data): batch input data
         num_classes (int): number of classes
@@ -304,6 +313,9 @@ def sanitize_input(arg, fallback_dtype=np.float32, reshape=None):
     if isinstance(arg, list) and not arg:
         raise ValueError('input is empty')
 
+    if isinstance(arg, (cntk_py.Value, cntk_py.NDArrayView)):
+        return constant(value=arg)
+    
     if not isinstance(arg, np.ndarray) or arg.dtype!=fallback_dtype:
         arg = np.asarray(arg, dtype=fallback_dtype)
         if arg.shape == ():
