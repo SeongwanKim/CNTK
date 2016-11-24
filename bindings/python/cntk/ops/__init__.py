@@ -1624,18 +1624,19 @@ def reduce_mean(x, axis=None, name=''):
 
     Examples:
         >>> # create 3x2 matrix in a sequence of length 1 in a batch of one sample
-        >>> data = [[10., 20.],[50., 40.],[30., 60.]]
-
         >>> origin_prec = np.get_printoptions()['precision']
         >>> np.set_printoptions(precision=3)
+        >>> data = [[10., 20.],[50., 40.],[30., 60.]]
+        
         >>> C.reduce_mean(data, 0).eval()
-        array([[ 30.,  40.]], dtype=float32)
+        array([[ 30.000002,  40.]], dtype=float32)
 
-        >>> np.set_printoptions(precision=origin_prec)
         >>> C.reduce_mean(data, 1).eval()
         array([[ 15.],
                [ 45.],
                [ 45.]], dtype=float32)
+
+        >>> np.set_printoptions(precision=origin_prec)
 
     Args:
         x: input tensor
