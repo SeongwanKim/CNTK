@@ -1697,6 +1697,7 @@ def reduce_mean(x, axis=None, name=''):
         array([[ 12.5],
                [ 35. ],
                [ 57.5]], dtype=float32)
+
     Args:
         x: input tensor
         axis (int or :class:`~cntk.axis.Axis`): axis along which the reduction will be performed
