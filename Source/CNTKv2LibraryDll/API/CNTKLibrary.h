@@ -2261,6 +2261,8 @@ namespace CNTK
 #endif
 
     public:
+
+#ifndef SWIGCSHARP
         ///
         /// Computes and stores the values of specified variables in the 'outputs' map, using provided 'inputs' values corresponding
         /// to each leaf variable of the function of VariableKind 'Input'.
@@ -2279,8 +2281,6 @@ namespace CNTK
                                          std::unordered_map<Variable, ValuePtr>& outputs,
                                          const DeviceDescriptor& computeDevice = DeviceDescriptor::UseDefaultDevice(),
                                          const std::unordered_set<Variable>& outputsToRetainBackwardStateFor = {}) = 0;
-
-#ifndef SWIGCSHARP
 
         ///
         /// Backpropagates supplied 'rootGradientValues' for one or more of the output variables of the Function, to produce gradient Values
@@ -2315,6 +2315,15 @@ namespace CNTK
         /// any variable replacements requested are applied in the cloned Function instance.
         ///
         CNTK_API FunctionPtr Clone(ParameterCloningMethod parameterCloneMethod = ParameterCloningMethod::Clone, const std::unordered_map<Variable, Variable>& replacements = {}) const;
+
+        ///
+        /// Computes and stores the values of specified variables in the 'outputs' map, using provided 'inputs' values corresponding
+        /// to each leaf variable of the function of VariableKind 'Input'.
+        /// The function does not return any variables that needed for backpropagation of gradients.
+        ///
+        CNTK_API void Evaluate(const std::unordered_map<Variable, ValuePtr>& arguments,
+                      std::unordered_map<Variable, ValuePtr>& outputs,
+                      const DeviceDescriptor& computeDevice = DeviceDescriptor::UseDefaultDevice());
 
 #ifndef SWIGCSHARP
 
