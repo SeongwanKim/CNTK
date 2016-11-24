@@ -1629,7 +1629,7 @@ def reduce_mean(x, axis=None, name=''):
         >>> data = [[10., 20.],[50., 40.],[30., 60.]]
         
         >>> C.reduce_mean(data, 0).eval()
-        array([[ 30.000002,  40.]], dtype=float32)
+        array([[ 30.,  40.]], dtype=float32)
 
         >>> C.reduce_mean(data, 1).eval()
         array([[ 15.],
