@@ -408,6 +408,8 @@ namespace CNTK
 #endif
 
     public:
+
+#ifndef SWIGCSHARP
         ///
         /// Construct a NDArrayView with the specified 'dataBuffer' as the backing storage.
         /// The 'dataBuffer' must have been allocated on the specified 'device', must be at least
@@ -423,7 +425,6 @@ namespace CNTK
             : NDArrayView(dataType, viewShape, const_cast<void*>(dataBuffer), bufferSizeInBytes, device, /*readOnly =*/ true)
         {}
 
-#ifndef SWIGCSHARP
         ///
         /// Construct a NDArrayView with newly allocated sparse storage in SparseCSC format on the specified 'device' and initialize its contents
         // with the specified Sparse CSC format data.
@@ -743,10 +744,12 @@ namespace CNTK
         ///
         const NDShape& Shape() const { return m_maskShape; }
 
+#ifndef SWIGCSHARP
         ///
         /// Returns a read-only pointer to the data buffer underlying 'this' Mask object
         /// 
         CNTK_API const MaskKind* DataBuffer() const;
+#endif
 
         ///
         /// Creates a new NDArrayView with newly allocated storage on the specified device and copies 'this' view's contents into the newly allocated view.
